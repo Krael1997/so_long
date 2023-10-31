@@ -6,7 +6,7 @@
 #    By: abelrodr <abelrodr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/02 17:40:23 by abelrodr          #+#    #+#              #
-#    Updated: 2023/10/11 16:50:13 by abelrodr         ###   ########.fr        #
+#    Updated: 2023/10/31 15:30:52 by abelrodr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,13 @@ INC = -I $(INC_DIR) -I $(LIBFT_DIR)/inc -I $(LIBMLX_DIR)/include/MLX42
 LIBS = $(LIBFT_DIR)/libft.a $(LIBMLX_DIR)/libmlx42.a
 RM = rm -rf
 
-SRCS = $(SRC_DIR)/main.c
+SRCS = $(SRC_DIR)/main.c \
+		$(SRC_DIR)/render_map.c \
+		$(SRC_DIR)/key_hook.c \
+		$(SRC_DIR)/flood_fill.c \
+		$(SRC_DIR)/count_characters.c \
+		$(SRC_DIR)/check_map.c \
+		$(SRC_DIR)/cleaning.c
 OBJS = $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 
 OBJ_DIR = obj
