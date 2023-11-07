@@ -6,7 +6,7 @@
 /*   By: abelrodr <abelrodr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 17:02:50 by abelrodr          #+#    #+#             */
-/*   Updated: 2023/11/07 13:49:58 by abelrodr         ###   ########.fr       */
+/*   Updated: 2023/11/07 15:23:39 by abelrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ void	bonus_count(t_game *game)
 	counter = NULL;
 }
 
-void	beaten_by_husband(t_game *game)
+void	game_lost(t_game *game)
 {
 	game->player->instances[0].enabled = 0;
 	ft_printf("We never win Worlds :(\n");

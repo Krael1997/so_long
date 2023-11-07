@@ -6,7 +6,7 @@
 /*   By: abelrodr <abelrodr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 14:43:01 by abelrodr          #+#    #+#             */
-/*   Updated: 2023/11/07 14:32:36 by abelrodr         ###   ########.fr       */
+/*   Updated: 2023/11/07 15:13:54 by abelrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,6 @@ int	integrity_check(char *buf)
 
 int	map_borders(t_map *map, char *buf)
 {
-	printf("Entering map_borders function\n");
 	int	i;
 	int	j;
 	int	k;
@@ -94,10 +93,6 @@ void	map_consistence(t_map *map, char *buf)
 	map->height = count_n(buf, 10);
 	map->lenght = ft_strlen(buf) / map->height;
 	map->consistence = map->total_char % map->height;
-	printf("map->total_char: %d\n", map->total_char);
-    printf("map->lenght: %d\n", map->lenght);
-    printf("map->height: %d\n", map->height);
-    printf("map->consistence: %d\n", map->consistence);
 	if (map->consistence == 0)
 		error_function(4);
 }
@@ -118,7 +113,6 @@ int	map_check(char *filename)
 		error_function(2);
 	map.total_char = read(fd, buf, 2048);
 	buf[map.total_char] = '\0';
-	printf("Contenido del archivo:\n%s\n", buf);
 	close(fd);
 	if (buf[0] == '\0')
 		error_function(3);

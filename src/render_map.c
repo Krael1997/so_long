@@ -6,7 +6,7 @@
 /*   By: abelrodr <abelrodr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 17:24:28 by abelrodr          #+#    #+#             */
-/*   Updated: 2023/11/07 14:46:08 by abelrodr         ###   ########.fr       */
+/*   Updated: 2023/11/07 15:13:37 by abelrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,12 +76,10 @@ void	while_function(t_game *game, t_map *map, int y, int i)
 
 void	render_map(t_game *game, t_map *map)
 {
-	printf("Rendering map\n");
 	int	i;
 	int	y;
 
 	load_image(game);
-	printf("Image loaded\n");
 	i = 0;
 	while (i < (map->height - 1))
 	{
@@ -93,10 +91,6 @@ void	render_map(t_game *game, t_map *map)
 		}
 		i++;
 	}
-	printf("Floor rendered\n");
 	i = 0;
 	while_function(game, map, y, i);
-	printf("Map rendered\n");
-	//mlx_image_to_window(game->mlx, game->back, 0, 0);
-	//printf("Back rendered\n");
 }

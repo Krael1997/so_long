@@ -6,7 +6,7 @@
 /*   By: abelrodr <abelrodr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 17:10:38 by abelrodr          #+#    #+#             */
-/*   Updated: 2023/10/31 17:39:35 by abelrodr         ###   ########.fr       */
+/*   Updated: 2023/11/07 15:41:53 by abelrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,10 @@
 
 void	move_up(t_game *game)
 {
-	if (game->grid[game->p_pos_h - 1][game->p_pos_l] == '1'
-	|| (game->grid[game->p_pos_h - 1][game->p_pos_l] == 'X' && game->c == 0))
+	if (game->grid[game->p_pos_h - 1][game->p_pos_l] == '1')
 		return ;
-	else if (game->grid[game->p_pos_h - 1][game->p_pos_l] == 'X' && game->c > 0)
-		beaten_by_husband(game);
+	else if (game->grid[game->p_pos_h - 1][game->p_pos_l] == 'X')
+		game_lost(game);
 	else
 	{
 		game->player->instances[0].y -= 32;
@@ -43,11 +42,10 @@ void	move_up(t_game *game)
 
 void	move_down(t_game *game)
 {
-	if (game->grid[game->p_pos_h + 1][game->p_pos_l] == '1'
-	|| (game->grid[game->p_pos_h + 1][game->p_pos_l] == 'X' && game->c == 0))
+	if (game->grid[game->p_pos_h + 1][game->p_pos_l] == '1')
 		return ;
-	else if (game->grid[game->p_pos_h + 1][game->p_pos_l] == 'X' && game->c > 0)
-		beaten_by_husband(game);
+	else if (game->grid[game->p_pos_h + 1][game->p_pos_l] == 'X')
+		game_lost(game);
 	else
 	{
 		game->player->instances[0].y += 32;
@@ -72,11 +70,10 @@ void	move_down(t_game *game)
 
 void	move_left(t_game *game)
 {
-	if (game->grid[game->p_pos_h][game->p_pos_l - 1] == '1'
-	|| (game->grid[game->p_pos_h][game->p_pos_l - 1] == 'X' && game->c == 0))
+	if (game->grid[game->p_pos_h][game->p_pos_l - 1] == '1')
 		return ;
-	else if (game->grid[game->p_pos_h][game->p_pos_l - 1] == 'X' && game->c > 0)
-		beaten_by_husband(game);
+	else if (game->grid[game->p_pos_h][game->p_pos_l - 1] == 'X')
+		game_lost(game);
 	else
 	{
 		game->player->instances[0].x -= 32;
@@ -101,11 +98,10 @@ void	move_left(t_game *game)
 
 void	move_right(t_game *game)
 {
-	if (game->grid[game->p_pos_h][game->p_pos_l + 1] == '1'
-	|| (game->grid[game->p_pos_h][game->p_pos_l + 1] == 'X' && game->c == 0))
+	if (game->grid[game->p_pos_h][game->p_pos_l + 1] == '1')
 		return ;
-	else if (game->grid[game->p_pos_h][game->p_pos_l + 1] == 'X' && game->c > 0)
-		beaten_by_husband(game);
+	else if (game->grid[game->p_pos_h][game->p_pos_l + 1] == 'X')
+		game_lost(game);
 	else
 	{
 		game->player->instances[0].x += 32;

@@ -6,7 +6,7 @@
 /*   By: abelrodr <abelrodr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 13:49:49 by abelrodr          #+#    #+#             */
-/*   Updated: 2023/11/07 14:43:27 by abelrodr         ###   ########.fr       */
+/*   Updated: 2023/11/07 15:33:02 by abelrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ void		put_collectible(t_game *game, int y, int i);
 void		map_consistence(t_map *map, char *buf);
 void		while_function(t_game *game, t_map *map, int y, int i);
 void		player_rendering(t_game *game, int y, int i);
-void		beaten_by_husband(t_game *game);
+void		game_lost(t_game *game);
 void		bonus_count(t_game *game);
 void		emergency_cleaning(t_game *game);
 
