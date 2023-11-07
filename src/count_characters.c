@@ -6,7 +6,7 @@
 /*   By: abelrodr <abelrodr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 16:01:09 by abelrodr          #+#    #+#             */
-/*   Updated: 2023/10/31 16:36:02 by abelrodr         ###   ########.fr       */
+/*   Updated: 2023/11/07 14:33:34 by abelrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 void	load_image(t_game *game)
 {
-	game->wall_t = mlx_load_png("textures/wall.png");
-	game->player_t = mlx_load_png("texture/player.png");
-	game->coll_t = mlx_load_png("texture/collectible.png");
-	game->exit_t = mlx_load_png("texture/exit.png");
-	game->floor_t = mlx_load_png("texture/floor.png");
-	game->couple_t = mlx_load_png("texture/couple.png");
-	game->enemy_t = mlx_load_png("texture/enemy.png");
-	game->back_t = mlx_load_png("texture/back.png");
+	game->wall_t = mlx_load_png("/Users/abelrodr/cursus/so_long/textures/wall.png");
+	game->player_t = mlx_load_png("/Users/abelrodr/cursus/so_long/textures/player.png");
+	game->coll_t = mlx_load_png("/Users/abelrodr/cursus/so_long/textures/collectible.png");
+	game->exit_t = mlx_load_png("/Users/abelrodr/cursus/so_long/textures/exit.png");
+	game->floor_t = mlx_load_png("/Users/abelrodr/cursus/so_long/textures/floor.png");
+	game->couple_t = mlx_load_png("/Users/abelrodr/cursus/so_long/textures/couple.png");
+	game->enemy_t = mlx_load_png("/Users/abelrodr/cursus/so_long/textures/enemy.png");
+	game->back_t = mlx_load_png("/Users/abelrodr/cursus/so_long/textures/back.png");
 	game->wall = mlx_texture_to_image(game->mlx, game->wall_t);
 	mlx_delete_texture(game->wall_t);
 	game->player = mlx_texture_to_image(game->mlx, game->player_t);
@@ -41,6 +41,7 @@ void	load_image(t_game *game)
 
 int	count_characters(char *buf)
 {
+	printf("Entering count_characters function\n");
 	int	i;
 	int	e;
 	int	c;
@@ -72,7 +73,7 @@ int	count_n(char *buf, int c)
 	int		count;
 
 	i = 0;
-	count = 0;
+	count = 1;
 	n = (char)c;
 	while (buf[i])
 	{

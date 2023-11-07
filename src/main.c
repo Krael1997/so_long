@@ -6,7 +6,7 @@
 /*   By: abelrodr <abelrodr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 17:43:37 by abelrodr          #+#    #+#             */
-/*   Updated: 2023/10/31 17:08:16 by abelrodr         ###   ########.fr       */
+/*   Updated: 2023/11/07 14:43:14 by abelrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,22 +48,30 @@ void	game_init(t_game *game)
 
 int	game_start(t_map *map, char *buf)
 {
+	printf("Entering game_start function\n");
 	t_game	game;
 
 	game_init(&game);
+	printf("game->w: %d\n", game.w);
 	game.w = map->lenght;
 	game.h = map->height;
+	printf("game->w: %d\n", game.w);
+	printf("game->h: %d\n", game.h);
 	char_count_2(&game, buf);
 	game.grid = ft_split(buf, '\n');
 	path_finder(&game);
 	game.grid = ft_split(buf, '\n');
+	printf("Grid: %s\n", game.grid[0]);
 	game.mlx = mlx_init(game.w * 32, game.h * 32, "WORLDS2K23", false);
+	printf("game->mlx: %p\n", game.mlx);
 	if (!game.mlx)
 	{
 		puts(mlx_strerror(mlx_errno));
 		return (EXIT_FAILURE);
 	}
+	printf("game->mlx: %p\n", game.mlx);
 	render_map(&game, map);
+	printf("render_map function called\n");
 	mlx_key_hook(game.mlx, &key_hook, &game);
 	integrity_check(buf);
 	mlx_loop(game.mlx);

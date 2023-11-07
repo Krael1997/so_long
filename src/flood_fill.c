@@ -6,7 +6,7 @@
 /*   By: abelrodr <abelrodr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 17:02:50 by abelrodr          #+#    #+#             */
-/*   Updated: 2023/10/31 16:31:55 by abelrodr         ###   ########.fr       */
+/*   Updated: 2023/11/07 13:49:58 by abelrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void	path_finder(t_game *game)
 
 void	flood_fill(t_game *game, int y, int i)
 {
-	if (game->grid[y][i] == 'f' || game->grid[y][i] == '1'
+	if (game->grid[y][i] == 'f' || game->grid[y][i] == 49
 		|| game->grid[y][i] == 'X')
 		return ;
 	if (game->grid[y][i] == 'E')
